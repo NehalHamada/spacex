@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# 🚀 SpaceX Mission Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that displays SpaceX launches, provides filtering and search capabilities, and visualizes launch data over time.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- 📋 Mission Directory (List of SpaceX launches)
+- 🔍 Search launches by name
+- 🎯 Filter launches (All, Upcoming, Past, Successful, Failed)
+- 📊 Data visualization (Launches per Year chart)
+- 📄 Launch Details page
+- ⚠️ Error handling & loading states
+- ❌ Not Found & Empty states
+- 📱 Fully responsive design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project was built using modern frontend technologies to ensure scalability, performance, and a clean user experience.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🧩 Core
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **React (with TypeScript)** – Component-based architecture with strong typing for better maintainability.
+- **Vite** – Fast development environment and optimized build performance.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🎨 UI & Styling
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Tailwind CSS** – Utility-first CSS framework for rapid and responsive design.
+- **shadcn/ui** – Reusable and accessible UI components built on top of Radix UI.
+- **Lucide Icons** – Clean and modern icon set.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📊 Data Visualization
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Recharts** – Used to build responsive and interactive charts (Launches per Year).
+
+### 🔄 State Management
+
+- **Zustand** – Lightweight global state management for filters, search, and pagination.
+
+### 🌐 Data Fetching
+
+- **Axios** – API requests handling.
+- **TanStack Query (React Query)** – Efficient data fetching, caching, and synchronization.
+
+### 🧠 Architecture
+
+- **Custom Hooks** – Separation of logic from UI (e.g., useFilteredLaunches).
+- **Service Layer** – API logic separated from components.
+- **Utility Functions** – Reusable logic (filtering, formatting, chart processing).
+
+### 📱 UX Enhancements
+
+- Responsive design for all screen sizes
+- Loading states (Skeleton UI)
+- Error handling UI
+- Empty & Not Found states
+- Scroll hints for mobile charts
+
+---
+
+## 🔗 API Used
+
+- https://api.spacexdata.com/v4/launches
+
+---
+
+## 🌍 Live Demo
+
+- https://spacex-orpin-phi.vercel.app/
+
+---
+
+## 🛠️ Getting Started
+
+```bash
+npm install
+npm run dev
 ```

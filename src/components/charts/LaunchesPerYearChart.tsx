@@ -18,15 +18,15 @@ import {
 
 function LaunchesPerYearChart({ data }: LaunchesPerYearChartProps) {
   return (
-    <Card id="analytics">
+    <Card id="analytics" className="overflow-hidden border-border/60 shadow-sm">
       <CardHeader>
         <CardTitle>Launches Per Year</CardTitle>
         <CardDescription>
           A quick look at SpaceX launch activity over time
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <div className="h-64 sm:h-72 lg:h-80">
+      <CardContent className="overflow-x-auto">
+        <div className="h-65 min-w-140 sm:h-75 sm:min-w-0 lg:h-85">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={data}
@@ -48,7 +48,7 @@ function LaunchesPerYearChart({ data }: LaunchesPerYearChartProps) {
                 dataKey="count"
                 fill="#2563eb"
                 radius={[8, 8, 0, 0]}
-                maxBarSize={48}
+                maxBarSize={40}
               />
             </BarChart>
           </ResponsiveContainer>

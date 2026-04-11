@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { AlertCircle } from "lucide-react";
-
 import LaunchesPerYearChart from "@/components/charts/LaunchesPerYearChart";
 import MissionFilters from "@/components/mission/MissionFilters";
 import MissionList from "@/components/mission/MissionList";
@@ -18,6 +17,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useFilteredLaunches } from "@/hooks/useFilteredLaunches";
 import { useLaunchesFilterStore } from "@/store/launches-filter.store";
 import { getLaunchesPerYear } from "@/utils/getLaunchesPerYear";
+import no from "/search.png";
 
 const ITEMS_PER_PAGE = 30;
 
@@ -122,10 +122,7 @@ function HomePage() {
         </>
       ) : (
         <div className="rounded-xl border border-dashed p-10 text-center">
-          <h2 className="text-lg font-semibold">No launches found</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Try another search term or choose a different filter.
-          </p>
+          <img src={no} alt="" width={190} height={190} className="mx-auto" />
         </div>
       )}
     </section>
