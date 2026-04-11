@@ -26,12 +26,23 @@ function LaunchesPerYearChart({ data }: LaunchesPerYearChartProps) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="h-80 w-full">
+        <div className="h-64 sm:h-72 lg:h-80">
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data}>
+            <BarChart
+              data={data}
+              margin={{ top: 8, right: 8, left: -20, bottom: 0 }}>
               <CartesianGrid vertical={false} strokeDasharray="3 3" />
-              <XAxis dataKey="year" />
-              <YAxis allowDecimals={false} />
+              <XAxis
+                dataKey="year"
+                tick={{ fontSize: 12 }}
+                tickLine={false}
+                axisLine={false}
+              />
+              <YAxis
+                allowDecimals={false}
+                tick={{ fontSize: 12 }}
+                axisLine={false}
+              />
               <Tooltip />
               <Bar
                 dataKey="count"
