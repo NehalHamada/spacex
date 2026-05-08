@@ -10,7 +10,7 @@ function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/details/:id" element={<LaunchDetailsPage />} />
-        <Route path="/*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
