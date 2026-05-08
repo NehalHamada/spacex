@@ -38,7 +38,8 @@ This project was built using modern frontend technologies to ensure scalability,
 
 ### 🔄 State Management
 
-- **Zustand** – Lightweight global state management for filters, search, and pagination.
+- **Zustand** – Lightweight global state management for filters, search, and pagination
+- I use it in task because asked it in interview by interviewer
 
 ### 🌐 Data Fetching
 
